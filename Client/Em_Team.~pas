@@ -1,0 +1,31 @@
+unit Em_Team;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, DB, Grids, DBGrids;
+
+type
+  TfmE_T = class(TForm)
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmE_T: TfmE_T;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,56 @@
+unit Route_St;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, Grids, DBGrids, Menus;
+
+type
+  TfmRoute_St = class(TForm)
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    procedure N1Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmRoute_St: TfmRoute_St;
+
+implementation
+
+uses Unit2, NewEmpl, NewR_St;
+
+{$R *.dfm}
+
+procedure TfmRoute_St.N1Click(Sender: TObject);
+begin
+  fmNewR_St.eRoute.Text:= '';
+  fmNewR_St.eAr.Text:= '';
+ fmNewR_St.eSt.Text := '';
+ fmNewR_St.ShowModal;
+ if fmNewR_St.ModalResult = mrOk then
+ begin
+  try
+    dm.DCOMConnection1.AppServer.smAddRoute_St( fmNewR_St.st_id, fmNewR_st.route_id);
+  except
+  MessageDlg('Ошибка записи', mtError, [mbOk],0);
+  end;
+  dm.cdsEmpl.Refresh;
+end;
+    end;
+procedure TfmRoute_St.FormActivate(Sender: TObject);
+begin
+    DataSource1.DataSet := dm.cdsR_st;
+end;
+
+end.
