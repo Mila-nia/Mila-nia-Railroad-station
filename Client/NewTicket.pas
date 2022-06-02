@@ -37,6 +37,7 @@ type
     procedure Button1Click(Sender: TObject);
    // procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure ePriceKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -75,6 +76,11 @@ begin
   eRoute.Text := route_name;
  eAr.Text := route_ar;
 
+end;
+
+procedure TfmNewTicket.ePriceKeyPress(Sender: TObject; var Key: Char);
+begin
+ if not (Key in ['0'..'9', #8]) then Key := #0;
 end;
 
 end.

@@ -103,7 +103,7 @@ object fmNewTicket: TfmNewTicket
     Left = 88
     Top = 176
     Width = 217
-    Height = 25
+    Height = 21
     TabOrder = 3
   end
   object ePrice: TEdit
@@ -112,6 +112,7 @@ object fmNewTicket: TfmNewTicket
     Width = 121
     Height = 21
     TabOrder = 4
+    OnKeyPress = ePriceKeyPress
   end
   object eRoute: TEdit
     Left = 432
