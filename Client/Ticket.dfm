@@ -1,6 +1,6 @@
 object fmTicket: TfmTicket
-  Left = 169
-  Top = 148
+  Left = 317
+  Top = 119
   Width = 870
   Height = 448
   Caption = #1041#1080#1083#1077#1090

@@ -1,6 +1,6 @@
 object fmTMP: TfmTMP
-  Left = 213
-  Top = 0
+  Left = 281
+  Top = 114
   Width = 953
   Height = 573
   Caption = #1054#1090#1095#1077#1090#1099

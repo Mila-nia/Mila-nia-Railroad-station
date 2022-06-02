@@ -1041,7 +1041,7 @@ k:=0;
   if (dm.cdsTicketSTATUS.Value = 1 ) then
    begin
   //if  ((dm.cdsTicketDATA.Value) = DateTimePicker3.Date) then
-  if CompareDate(dm.cdsTicketDATA.Value, DateTimePicker3.Date) =0    then
+  if CompareDate(dm.cdsTicketDATA.Value, DateTimePicker3.Date) =1    then
   begin
    if (dm.cdsTMP.FindKey([id]))  then
    dm.cdsTMP.Edit
@@ -1179,7 +1179,7 @@ k:=0;
   if (dm.cdsTicketSTATUS.Value = 0 ) then
    begin
   //if  ((dm.cdsTicketDATA.Value) = DateTimePicker3.Date) then
-  if CompareDate(dm.cdsTicketDATA.Value, DateTimePicker3.Date) =0    then
+  if CompareDate(dm.cdsTicketDATA.Value, DateTimePicker3.Date) =1    then
   begin
    if (dm.cdsTMP.FindKey([id]))  then
    dm.cdsTMP.Edit

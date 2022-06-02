@@ -93,7 +93,7 @@ begin
  fmNewTicket.eAr.Text:= dm.cdsTicketROUTE_AR.Text;
  fmNewTicket.eTrip.Text:= dm.cdsTicketID_TRIP.Text;
  fmNewTicket.DateTimePicker1.Date :=dm.cdsTicketDATA.Value;
- fmNewTicket.DateTimePicker2.DateTime:= StrToDateTime(dm.cdsTicketDEPARTURES.Value);
+ fmNewTicket.DateTimePicker2.Time:= StrToTime(dm.cdsTicketDEPARTURES.Value);
 
  fmNewTicket.ShowModal;
  if fmNewTicket.ModalResult = mrOk then
@@ -111,7 +111,7 @@ begin
   id_trip := fmNewTicket.trip_id;
     dm.DCOMConnection1.AppServer.smAddTicket(dm.cdsTicketID_TIC.Value,fmNewTicket.DateTimePicker1.Date,
     fmNewTicket.eCarriage.Text, fmNewTicket.eSpot.Text, id_pass,s, fmNewTicket.ePrice.Text,
-  id_route, id_trip, DateTimeToStr(fmNewTicket.DateTimePicker2.DateTime));
+  id_route, id_trip, TimeToStr(fmNewTicket.DateTimePicker2.Time));
   except
   MessageDlg('Ошибка записи', mtError, [mbOk],0);
   end;

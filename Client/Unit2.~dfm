@@ -1,8 +1,8 @@
 object dm: Tdm
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 187
-  Top = 95
+  Left = 261
+  Top = 197
   Height = 463
   Width = 1074
   object DCOMConnection1: TDCOMConnection
@@ -406,6 +406,7 @@ object dm: Tdm
     object cdsTicketSTATUS: TIntegerField
       DisplayLabel = #1057#1090#1072#1090#1091#1089
       FieldName = 'STATUS'
+      Visible = False
     end
     object cdsTicketPRICE: TIntegerField
       DisplayLabel = #1062#1077#1085#1072
@@ -451,6 +452,16 @@ object dm: Tdm
       LookupResultField = 'TR_TIME'
       KeyFields = 'ID_ROUTE'
       Visible = False
+      Lookup = True
+    end
+    object cdsTicketStatusName: TStringField
+      DisplayLabel = #1057#1090#1072#1090#1091#1089
+      FieldKind = fkLookup
+      FieldName = 'StatusName'
+      LookupDataSet = cdsStatusLookup
+      LookupKeyFields = 'STATUS_ID'
+      LookupResultField = 'STATUS_NAME'
+      KeyFields = 'STATUS'
       Lookup = True
     end
   end
@@ -543,6 +554,7 @@ object dm: Tdm
     object cdsTripSTATUS: TIntegerField
       DisplayLabel = #1057#1090#1072#1090#1091#1089
       FieldName = 'STATUS'
+      Visible = False
     end
     object cdsTripROUTE_NAME: TStringField
       DisplayLabel = #1055#1091#1085#1082#1090' '#1086#1090#1087#1088#1072#1074#1083#1077#1085#1080#1103
@@ -564,7 +576,7 @@ object dm: Tdm
       KeyFields = 'ID_ROUTE'
       Lookup = True
     end
-    object cdsTripDIR_ID: TIntegerField
+    object cdsTripDIR_ID: TStringField
       FieldKind = fkLookup
       FieldName = 'DIR_ID'
       LookupDataSet = cdsRoute
@@ -572,6 +584,26 @@ object dm: Tdm
       LookupResultField = 'ID_DIR'
       KeyFields = 'ID_ROUTE'
       Visible = False
+      Lookup = True
+    end
+    object cdsTripStatusName: TStringField
+      DisplayLabel = #1057#1090#1072#1090#1091#1089
+      FieldKind = fkLookup
+      FieldName = 'StatusName'
+      LookupDataSet = cdsStatusLookup
+      LookupKeyFields = 'STATUS_ID'
+      LookupResultField = 'STATUS_NAME'
+      KeyFields = 'STATUS'
+      Lookup = True
+    end
+    object cdsTripDirection: TStringField
+      DisplayLabel = #1053#1072#1087#1088#1072#1074#1083#1077#1085#1080#1077
+      FieldKind = fkLookup
+      FieldName = 'Direction'
+      LookupDataSet = cdsDir
+      LookupKeyFields = 'ID'
+      LookupResultField = 'NAME'
+      KeyFields = 'DIR_ID'
       Lookup = True
     end
   end
@@ -588,6 +620,21 @@ object dm: Tdm
     object cdsTMPNAME: TStringField
       FieldName = 'NAME'
       Size = 50
+    end
+  end
+  object cdsStatusLookup: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspStatusLookUp'
+    RemoteServer = DCOMConnection1
+    Left = 40
+    Top = 168
+    object cdsStatusLookupSTATUS_ID: TIntegerField
+      FieldName = 'STATUS_ID'
+    end
+    object cdsStatusLookupSTATUS_NAME: TStringField
+      FieldName = 'STATUS_NAME'
+      Size = 255
     end
   end
 end

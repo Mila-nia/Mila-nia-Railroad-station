@@ -71,6 +71,10 @@ type
     dspTrip: TDataSetProvider;
     tTMP: TIBTable;
     dspTMP: TDataSetProvider;
+    tStatusLookUp: TIBTable;
+    dspStatusLookUp: TDataSetProvider;
+    tStatusLookUpTicket: TIBTable;
+    dspStatusLookUpTicket: TDataSetProvider;
   private
     { Private declarations }
   protected

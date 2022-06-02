@@ -1,10 +1,11 @@
 object MyServer: TMyServer
   OldCreateOrder = False
-  Left = 574
-  Top = 273
+  Left = 252
+  Top = 129
   Height = 570
   Width = 1066
   object IBDatabase1: TIBDatabase
+    Connected = True
     DatabaseName = 'C:\Users\danie\Desktop\'#1053#1086#1074#1072#1103' '#1087#1072#1087#1082#1072'\'#1041#1044'\BD1.FDB'
     Params.Strings = (
       'user_name=SYSDBA'
@@ -803,5 +804,33 @@ object MyServer: TMyServer
     DataSet = tTMP
     Left = 192
     Top = 416
+  end
+  object tStatusLookUp: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    TableName = 'STATUS_LOOKUP'
+    Left = 360
+    Top = 368
+  end
+  object dspStatusLookUp: TDataSetProvider
+    DataSet = tStatusLookUp
+    Left = 432
+    Top = 392
+  end
+  object tStatusLookUpTicket: TIBTable
+    Database = IBDatabase1
+    Transaction = IBTransaction1
+    BufferChunks = 1000
+    CachedUpdates = False
+    TableName = 'STATUS_LOOKUP_TICKET'
+    Left = 576
+    Top = 384
+  end
+  object dspStatusLookUpTicket: TDataSetProvider
+    DataSet = tStatusLookUpTicket
+    Left = 648
+    Top = 400
   end
 end

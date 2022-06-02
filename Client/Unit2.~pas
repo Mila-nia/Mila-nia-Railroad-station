@@ -94,8 +94,14 @@ type
     cdsEmplZP: TStringField;
     cdsTrainTIME: TStringField;
     cdsTrainPRICE: TIntegerField;
-    cdsTripDIR_ID: TIntegerField;
     cdsTicketTIME: TStringField;
+    cdsTripDIR_ID: TStringField;
+    cdsStatusLookup: TClientDataSet;
+    cdsStatusLookupSTATUS_ID: TIntegerField;
+    cdsStatusLookupSTATUS_NAME: TStringField;
+    cdsTicketStatusName: TStringField;
+    cdsTripStatusName: TStringField;
+    cdsTripDirection: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

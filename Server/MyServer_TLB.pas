@@ -12,7 +12,7 @@ unit MyServer_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 30.05.2022 22:29:18 from Type Library described below.
+// File generated on 02.06.2022 12:33:48 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Users\danie\Desktop\Новая папка\Server\Project1.tlb (1)
@@ -21,7 +21,7 @@ unit MyServer_TLB;
 // Helpfile: 
 // HelpString: Project1 Library
 // DepndLst: 
-//   (1) v1.0 Midas, (C:\Windows\SysWOW64\midas.dll)
+//   (1) v1.0 Midas, (C:\Program Files (x86)\Embarcadero\Studio\20.0\bin64\midas.dll)
 //   (2) v2.0 stdole, (C:\Windows\SysWOW64\stdole2.tlb)
 // ************************************************************************ //
 {$TYPEDADDRESS OFF} // Unit must be compiled without type-checked pointers. 
@@ -146,15 +146,15 @@ type
     procedure smDeleteTrain(ID: Integer); dispid 326;
     procedure smAddTrip(ID_TRIP: Integer; ID_ROUTE: Integer; ID_STATUS: Integer); dispid 327;
     procedure smDeleteTrip(ID: Integer; ID_ROUTE: Integer); dispid 328;
-    function AS_ApplyUpdates(const ProviderName: WideString; Delta: OleVariant; MaxErrors: Integer; 
-                             out ErrorCount: Integer; var OwnerData: OleVariant): OleVariant; dispid 20000000;
-    function AS_GetRecords(const ProviderName: WideString; Count: Integer; out RecsOut: Integer; 
-                           Options: Integer; const CommandText: WideString; var Params: OleVariant; 
+    function AS_ApplyUpdates(const ProviderName: WideString; Delta: OleVariant; MaxErrors: SYSINT; 
+                             out ErrorCount: SYSINT; var OwnerData: OleVariant): OleVariant; dispid 20000000;
+    function AS_GetRecords(const ProviderName: WideString; Count: SYSINT; out RecsOut: SYSINT; 
+                           Options: SYSINT; const CommandText: WideString; var Params: OleVariant; 
                            var OwnerData: OleVariant): OleVariant; dispid 20000001;
     function AS_DataRequest(const ProviderName: WideString; Data: OleVariant): OleVariant; dispid 20000002;
     function AS_GetProviderNames: OleVariant; dispid 20000003;
     function AS_GetParams(const ProviderName: WideString; var OwnerData: OleVariant): OleVariant; dispid 20000004;
-    function AS_RowRequest(const ProviderName: WideString; Row: OleVariant; RequestType: Integer; 
+    function AS_RowRequest(const ProviderName: WideString; Row: OleVariant; RequestType: SYSINT; 
                            var OwnerData: OleVariant): OleVariant; dispid 20000005;
     procedure AS_Execute(const ProviderName: WideString; const CommandText: WideString; 
                          var Params: OleVariant; var OwnerData: OleVariant); dispid 20000006;
